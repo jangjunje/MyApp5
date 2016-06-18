@@ -2,6 +2,7 @@ package com.example.user.myapp5.movie;
 
 import android.content.Context;
 import android.media.Image;
+import android.support.v7.app.AlertDialog;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.BaseAdapter;
@@ -53,6 +54,25 @@ public class MyGridAdapter extends BaseAdapter{
         imageview.setPadding(5,5,5,5);
 
         imageview.setImageResource(posterID[position]);
+
+        final int pos = position;
+        imageview.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                View dialogView = (View) View.inflate(context, R.layout.dailog, null);
+                AlertDialog.Builder dlg = new AlertDialog.Builder(context);
+                ImageView ivPoster = (ImageView) dialogView.findViewById(R.id.ivPoster);
+                ivPoster.setImageResource(posterID[pos]);
+
+                dlg.setTitle("큰 포스터");
+                dlg.setIcon(R.drawable.movie_icon);
+                dlg.setView(dialogView);
+                dlg.setNegativeButton("닫기", null);
+                dlg.show();
+            }
+        });
+
         return imageview;
     }
+
 }
