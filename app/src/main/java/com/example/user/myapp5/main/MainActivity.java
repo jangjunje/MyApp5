@@ -12,6 +12,7 @@ import com.example.user.myapp5.calc.CalcActivity;
 import com.example.user.myapp5.group.GroupActivity;
 import com.example.user.myapp5.kaup.KaupActivity;
 import com.example.user.myapp5.login.loginActivity;
+import com.example.user.myapp5.movie.MovieActivity;
 import com.example.user.myapp5.signup.SignupActivity;
 
 public class MainActivity extends Activity implements View.OnClickListener{
@@ -25,6 +26,7 @@ public class MainActivity extends Activity implements View.OnClickListener{
         ((Button) findViewById(R.id.btLogin)).setOnClickListener(this);
         ((Button) findViewById(R.id.btSignup)).setOnClickListener(this);
         ((Button) findViewById(R.id.btGroup)).setOnClickListener(this);
+        ((Button) findViewById(R.id.btMovie)).setOnClickListener(this);
     }
 
     @Override
@@ -44,6 +46,9 @@ public class MainActivity extends Activity implements View.OnClickListener{
                 break;
             case R.id.btGroup:
                 startActivity(new Intent(this, GroupActivity.class));
+                break;
+            case R.id.btMovie:
+                startActivity(new Intent(this, MovieActivity.class));
                 break;
         }
 
