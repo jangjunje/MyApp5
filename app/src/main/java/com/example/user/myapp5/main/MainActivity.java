@@ -6,14 +6,16 @@ import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
+import android.widget.Spinner;
 
 import com.example.user.myapp5.R;
 import com.example.user.myapp5.calc.CalcActivity;
 import com.example.user.myapp5.group.GroupActivity;
 import com.example.user.myapp5.kaup.KaupActivity;
 import com.example.user.myapp5.login.loginActivity;
-import com.example.user.myapp5.movie.MovieActivity;
+import com.example.user.myapp5.spinner.SpinnerActivity;
 import com.example.user.myapp5.signup.SignupActivity;
+
 
 public class MainActivity extends Activity implements View.OnClickListener{
 
@@ -26,7 +28,7 @@ public class MainActivity extends Activity implements View.OnClickListener{
         ((Button) findViewById(R.id.btLogin)).setOnClickListener(this);
         ((Button) findViewById(R.id.btSignup)).setOnClickListener(this);
         ((Button) findViewById(R.id.btGroup)).setOnClickListener(this);
-        ((Button) findViewById(R.id.btMovie)).setOnClickListener(this);
+        ((Button) findViewById(R.id.btSpinner)).setOnClickListener(this);
     }
 
     @Override
@@ -47,8 +49,8 @@ public class MainActivity extends Activity implements View.OnClickListener{
             case R.id.btGroup:
                 startActivity(new Intent(this, GroupActivity.class));
                 break;
-            case R.id.btMovie:
-                startActivity(new Intent(this, MovieActivity.class));
+            case R.id.btSpinner:
+                startActivity(new Intent(this, SpinnerActivity.class));
                 break;
         }
 
